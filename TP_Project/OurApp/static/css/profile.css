@@ -1,0 +1,15 @@
+.container{
+    position: relative;
+    height: auto;
+    width: 40%;
+    max-height: 100%;
+    max-width: 600px;
+    min-width: 300px;
+    background-color: rgb(255, 253, 253);
+    margin: auto;
+    border-radius: 6px;
+    box-shadow: 0 10px 20px rgba(0.1, 0.1, 0.1, 0.1);
+    overflow: hidden;
+    padding: 3%;
+    font-family: 'Poppins', sans-serif;
+}

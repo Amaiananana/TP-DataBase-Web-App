@@ -1,0 +1,77 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <title>home</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Student Registration Form</h1>
+      <form method="post" action="{% url 'home' %}">
+
+        {% csrf_token %}
+        <!--FirstName id = fname
+            MiddleName id = mname
+            LastName id = lname
+            Email id = email
+            Gender id = gender
+            Date of Birth id = dob
+            Course id = course-->
+        <label for="fname">First Name</label>
+          <input type="text" id="fname" name="fname" required>
+
+        <label for="mname">Middle Name</label>
+          <input type="text" id="mname" name="mname">
+
+        <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lname" required>
+
+        <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        {% if error %}
+        <p style="color: red; font-family: 'Poppins', sans-serif; font-size: 14px;">{{ error }}</p>
+        {% endif %}
+
+        <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+    
+        <label for="gender">Gender</label>
+          <select id="gender" name="gender" required>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+            <option value="Prefer not to say">Prefer not to say</option>
+          </select>
+        <br><br>
+        <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" required>
+        <br><br> 
+
+        <label for="course">Course</label>
+          <select id="course" name="course" required>
+            <option value="BSAIS">BS in Accounting Information System</option>
+            <option value="BSCS">BS in Computer Science</option>
+            <option value="BSHM">BS in Hospitality Management</option>
+            <option value="BSIT">BS in Information Technology</option>
+            <option value="BSTM">BS in Tourism</option>
+          </select>
+        <br><br>
+
+        <p style="font-family: 'Poppins',sans-serif;
+        font-style: italic;
+        font-size: 12px;
+        color: #333; text-align: left;
+        margin-top: 0.5%;
+        text-align: center;">We'll never share your info with anyone else.</p>
+
+        <button type="submit"> Register </button>
+
+      </form>
+    </div>
+  </body>
+</html>
